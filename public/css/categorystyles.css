@@ -1,0 +1,76 @@
+body{
+    font-family: 'Merriweather', serif;
+    text-align: center;
+}
+
+h5 {
+    font-size: 1rem;
+}
+.card-title{
+    font-size: medium;
+    font-weight: bold;
+}
+
+
+/* Title section */
+#title{
+
+    padding-top: 1.5%;
+    background-size: cover;
+    color: white;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    
+}
+
+.title-section{
+    text-align: center;
+    height: 300px;
+    padding-top: 10%;
+}
+
+
+.nav-item{
+    margin: 0 9px;
+}
+
+#data{
+    padding-top: 50px;
+}
+
+.card-img-top{
+    height: 250px;
+    width: initial;
+    text-align: center;
+}
+
+.card-body{
+    text-align: left;
+}
+
+.dict{
+    font-weight: bold;
+}
+
+/*Footer section */
+#footer{
+    padding-top: 40px;
+    padding-bottom: 20px;
+    height: 120px;
+    background-color: #82CD47;
+}
+
+.footer-img{
+    margin: 0 1%;
+    margin-bottom: 15px;
+    color: whitesmoke;
+}
+
+
+.footer-img:hover{
+    color: #379237;
+}
+
+.footer-prg{
+    color: whitesmoke;
+}
