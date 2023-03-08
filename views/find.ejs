@@ -1,28 +1,24 @@
 <%- include('header_category'); -%>
 
-<div class="title-section">
-    <h1><%= Category %></h1>
-</div>
 </section>
 <section id="data">
-      <div class="card-deck row ms-3 me-3 text-center">
-        <% Items.forEach(function(item){ %>
-          <div class="card col-lg-3 col-md-4 ms-5 me-5 mt-4 mb-4 border-secondary">
+      <div class="card-deck row ms-3 me-3">
+       <% Items.forEach(item =>{ %>
+            <div class="card col-lg-3 col-md-4 ms-5 me-5 mt-4 mb-4 border-secondary">
             <img class="card-img-top card-img-bottom mt-2" src='<%= item.img_src %>' alt="Card image cap">
             <div class="card-body text-secondary">
               <h3 class="card-title"><%= item.common_name %></h3>
               <p class="card-text ">
                 <h5><span class="dict">Scientific name: </span><%= item.scientific_name %></h5>
                 <h5><span class="dict">Location: </span><%= item.location %></h5>
+                <p><span class="dict">Description: </span><%= item.descrp %></p>
               </p>
             </div>
-            <div class="card-footer d-grid">
-              <a class="btn btn-lg btn-outline-dark text-secondary" href="/find/<%= item.common_name %>">Find</a>
-            </div>
           </div>
-        <% }) %>
-        </div>
-    </section>
+       <% }) %>
+          
+      </div>
+</section>
 
 
 <%- include('footer'); -%>
