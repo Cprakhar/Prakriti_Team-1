@@ -2,7 +2,7 @@ import express, { query } from 'express';
 import _ from 'lodash';
 import bodyParser from 'body-parser';
 import ejs from 'ejs';
-import { connect, model } from 'mongoose';
+import mongoose, { connect, model } from 'mongoose';
 
 const app = express();
 
@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
-connect('mongodb+srv://Pchhalotre:Sonu321chh@cluster0.sjvnsih.mongodb.net/treesDB');
+connect('mongodb+srv://Pchhalotre:Sonu321chh@cluster0.sjvnsih.mongodb.net/trees');
 
 const Schema = {
     scientific_name: String,
@@ -19,6 +19,16 @@ const Schema = {
     common_name: String,
     img_src: String
 };
+
+
+const messageSchema = new  mongoose.Schema({
+    name: { type: String, required: true},
+    email: { type: String, required: true},
+    subject: { type: String, required: true},
+    message: String
+});
+
+const Message = mongoose.model('MessageInfo', messageSchema);
 
 const Tree = model('treeInfo', Schema);
 
@@ -95,8 +105,19 @@ app.route('/vegetable')
         }catch(err){
             console.log(err);
         }
-    });        
+    });      
+    
+app.route('/treemap')
+    .get(async(req, res) =>{
+        res.render('tree_map', {bg: bg_main});
+    })    
 
+
+app.route('/contactus')
+    .get(async(req, res) =>{
+        res.render('contactus', {bg: bg_main});
+    })
+    
 app.route('/find/:name')
     .get(async (req, res) =>{
         const name = req.params.name;
@@ -120,7 +141,7 @@ app.route('/search')
             ]
           });
           try{
-            res.render('find', {Items: results, bg: bg_main})
+            res.render('search', {Category: [results.length, query], Items: results, bg: bg_main})
           }catch (err){
             console.log(err);
           }
