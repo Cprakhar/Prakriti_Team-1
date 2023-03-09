@@ -44,7 +44,7 @@ const bg_vegetable = '/images/vegetable_bg.jpg';
 app.route('/')
     .get((req, res) =>{
         res.render('index');
-    });
+    })
 
 app.route('/medicinal')
     .get(async (req, res) =>{
@@ -54,7 +54,7 @@ app.route('/medicinal')
         }catch(err){
             console.log(err);
         }
-    });
+    })
 
 app.route('/fruit')
     .get(async (req, res) =>{
@@ -64,7 +64,7 @@ app.route('/fruit')
         }catch(err){
             console.log(err);
         }
-    });
+    })
      
 
 app.route('/cactus')
@@ -75,7 +75,7 @@ app.route('/cactus')
         }catch(err){
             console.log(err);
         }
-    });
+    })
 
 app.route('/flowering')
     .get(async (req, res) =>{
@@ -85,7 +85,7 @@ app.route('/flowering')
         }catch(err){
             console.log(err);
         }
-    }); 
+    })
 
 app.route('/ornamental')
     .get(async (req, res) =>{
@@ -95,7 +95,7 @@ app.route('/ornamental')
         }catch(err){
             console.log(err);
         }
-    }); 
+    })
 
 app.route('/vegetable')
     .get(async (req, res) =>{
@@ -105,7 +105,7 @@ app.route('/vegetable')
         }catch(err){
             console.log(err);
         }
-    });      
+    })
     
 app.route('/treemap')
     .get(async(req, res) =>{
