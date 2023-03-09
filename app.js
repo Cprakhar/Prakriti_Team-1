@@ -20,16 +20,6 @@ const Schema = {
     img_src: String
 };
 
-
-const messageSchema = new  mongoose.Schema({
-    name: { type: String, required: true},
-    email: { type: String, required: true},
-    subject: { type: String, required: true},
-    message: String
-});
-
-const Message = mongoose.model('MessageInfo', messageSchema);
-
 const Tree = model('treeInfo', Schema);
 
 const bg_fruit = '/images/fruit_bg.jpg';
